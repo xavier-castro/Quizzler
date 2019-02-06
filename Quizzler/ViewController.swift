@@ -71,15 +71,16 @@ class ViewController: UIViewController {
         let correctAnswer = allQuestions.list[questionNumber].answer
         
         if correctAnswer == pickedAnswer {
-            print("You got it!")
+            ProgressHUD.showSuccess("Correct!")
             score += 1
         } else {
-            print("Wrong!")
+            ProgressHUD.showError("Wrong!")
         }
     }
     
     // Restarts the app to go to the first array and appears the question with nextQuestion()
     func startOver() {
+        score = 0
         questionNumber = 0
         nextQuestion()
     }
